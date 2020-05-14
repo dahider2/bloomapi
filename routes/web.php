@@ -16,6 +16,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $results = Merchant::all()->random()->id;
+    $results = Merchant::with('articles')->get();
     return $results;
 });

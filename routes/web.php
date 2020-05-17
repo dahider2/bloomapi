@@ -16,6 +16,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $results = Merchant::with('articles')->get();
+    $results = Merchant::with('articles','articles.other_option_categories')->get();
     return $results;
 });
